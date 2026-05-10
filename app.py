@@ -51,6 +51,3 @@ if st.button("Calculate Age"):
         )
 
 
-        st.success(
-            f"🎉 **Your Age:** {years} years, {months} months, {days} days"
-        )
