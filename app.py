@@ -22,7 +22,7 @@ if st.button("Calculate Future Date"):
 # ---------------- AGE CALCULATOR ----------------
 st.subheader("👤 Age Calculator")
 
-dob = st.date_input("Select your Date of Birth", value=date(2000, 1, 1))
+dob = st.date_input("Select your Date of Birth", value=date(1980, 1, 1))
 
 if st.button("Calculate Age"):
     today = date.today()
