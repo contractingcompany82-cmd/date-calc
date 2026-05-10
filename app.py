@@ -19,12 +19,17 @@ if st.button("Calculate Future Date"):
     st.success(f"📅 **Result Date:** {result_date.strftime('%d-%m-%Y')}")
 
 # ---------------- AGE CALCULATOR ----------------
+# ---------------- AGE CALCULATOR ----------------
 st.subheader("👤 Age Calculator")
 
-dob = st.date_input("Select your Date of Birth")
+dob = st.date_input("Select your Date of Birth", value=date(2000, 1, 1))
 
 if st.button("Calculate Age"):
     today = date.today()
+
+    # Ensure dob is a date object
+    if isinstance(dob, datetime):
+        dob = dob.date()
 
     if dob > today:
         st.error("Date of birth cannot be in the future.")
@@ -40,6 +45,11 @@ if st.button("Calculate Age"):
         if months < 0:
             years -= 1
             months += 12
+
+        st.success(
+            f"🎉 Your Age: {years} years, {months} months, {days} days"
+        )
+
 
         st.success(
             f"🎉 **Your Age:** {years} years, {months} months, {days} days"
